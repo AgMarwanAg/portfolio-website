@@ -287,45 +287,64 @@ img {
   align-items: center;
 }
 
-.glass-circle {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-backdrop);
-  -webkit-backdrop-filter: var(--glass-backdrop);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+/* Portrait over circle layout */
+.portrait-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.glass-circle::before {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
+.circle-background {
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  background: var(--primary-color);
-  opacity: 0.2;
+  background: #1a1a2e;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
 }
 
-.glass-circle-2 {
+.portrait-image {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-backdrop);
-  -webkit-backdrop-filter: var(--glass-backdrop);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  top: -50px;
-  right: -50px;
-  z-index: -1;
+  z-index: 2;
+  width: 280px;
+  height: 350px;
+  object-fit: cover;
+  top: 10px; /* Aligns image to top of container */
+  left: 50%;
+  transform: translate(-50%,-35%); /* Center horizontally only */
+
 }
+
+/* Portrait over circle layout */
+.portrait-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-background {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #1a1a2e;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+/* .portrait-image {
+  position: absolute;
+  z-index: 2;
+  width: 280px;
+  height: 350px;
+  object-fit: cover;
+  /* filter: grayscale(30%) contrast(110%) brightness(90%); */
+  /* border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+} */ 
 
 /* ===== About Section ===== */
 .about {
@@ -663,6 +682,17 @@ img {
   .about-stats {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  /* Responsive portrait layout */
+  .circle-background {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .portrait-image {
+    width: 230px;
+    height: 300px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -726,6 +756,17 @@ img {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* Responsive portrait layout */
+  .circle-background {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .portrait-image {
+    width: 180px;
+    height: 250px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -742,16 +783,6 @@ img {
     gap: 1rem;
   }
   
-  .glass-circle {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .glass-circle-2 {
-    width: 150px;
-    height: 150px;
-  }
-  
   .skill-container {
     grid-template-columns: 1fr;
   }
@@ -759,5 +790,16 @@ img {
   .contact-form,
   .contact-card {
     padding: 1.5rem;
+  }
+  
+  /* Responsive portrait layout */
+  .circle-background {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .portrait-image {
+    width: 160px;
+    height: 220px;
   }
 }
