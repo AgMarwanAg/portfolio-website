@@ -1,12 +1,12 @@
-# Modern Developer Portfolio
+# Abdulghani Al-Sanaani - Flutter Developer Portfolio
 
-A responsive portfolio website with a dark theme featuring glassmorphism design. Built with HTML5, CSS3, and vanilla JavaScript.
+A responsive portfolio website showcasing my skills and projects as a Flutter mobile application developer. Built with HTML5, CSS3, and vanilla JavaScript with a modern dark theme featuring glassmorphism design.
 
 ## Features
 
 - Dark color scheme with predominantly black backgrounds
 - Glassmorphism effects throughout (semi-transparent elements with backdrop blur)
-- Primary accent color: #9da3b9 for highlights, buttons, and accents
+- Primary accent color: #00B4D8 (Blue) for highlights, buttons, and accents
 - Smooth animations and transitions
 - Modern, clean typography
 - Responsive design for all devices
@@ -52,6 +52,37 @@ This portfolio uses modern CSS features like `backdrop-filter` which may not be 
 - Firefox
 - Safari
 - Edge
+
+## About Me
+
+I'm a passionate Flutter developer with expertise in creating cross-platform mobile applications for both Android and iOS. With a strong foundation in Dart programming and mobile development principles, I bring ideas to life through clean, efficient code.
+
+### Skills
+- Flutter Development
+- Dart Programming
+- Clean Architecture
+- MVVM & MVC Patterns
+- BLoC State Management
+- RESTful APIs
+- Firebase Integration
+- Git Version Control
+- SOLID Principles
+- Design Patterns
+
+### Work Experience
+- **Developers options** - Mobile Application Developer (September 2023 - Present)
+- **Third Academy** - Trainer and Lecturer (January 2024)
+- **Third Eye Soft** - Mobile Application Developer (July 2023 – Dec 2023)
+
+### Education
+- Bachelor's degree in Information Technology, Alrazi University (2019 – 2023)
+- Intermediate English diploma, FLI institute (08-2018 – 04 2019)
+
+### Projects
+1. **Hertz Car Rental** - Official app for the local agent of Hertz International
+2. **SAM City Water** - Water distribution application for Sam factory
+3. **Universal Hotels** - App for booking hotel rooms and suites
+4. **Haddah Water** - Water distribution to wholesalers and grocers
 
 ## License
 

@@ -1,9 +1,9 @@
 /* ===== CSS Variables ===== */
 :root {
   /* Colors */
-  --primary-color: #c08774;
-  --primary-dark: #7a8099;
-  --primary-light: #c0c4d6;
+  --primary-color: #00B4D8;
+  --primary-dark: #0077B6;
+  --primary-light: #90E0EF;
   --bg-color: #0a0a14;
   --bg-secondary: #121220;
   --text-color: #f0f0f5;
@@ -237,7 +237,7 @@ img {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(157, 163, 185, 0.1) 0%, rgba(10, 10, 20, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, rgba(10, 10, 20, 0) 70%);
   z-index: -1;
 }
 
@@ -577,7 +577,7 @@ img {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(157, 163, 185, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
 }
 
 .form-group textarea {
