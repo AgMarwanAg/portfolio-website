@@ -65,12 +65,12 @@ img {
 }
 
 /* Glorious glowing mouse effect */
-.glowing-circle {
+/* .glowing-circle {
   position: fixed;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.8) 0%, rgba(0, 180, 216, 0.4) 70%, rgba(0, 180, 216, 0) 100%);
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.8) 0%, rgba(0, 180, 216, 0.4) 10%, rgba(0, 180, 216, 0) 100%);
   box-shadow: 0 0 30px rgba(0, 180, 216, 0.8),
               0 0 60px rgba(0, 180, 216, 0.6),
               0 0 90px rgba(0, 180, 216, 0.4),
@@ -80,7 +80,7 @@ img {
   z-index: 9999;
   transition: all 0.2s ease-out;
   mix-blend-mode: screen;
-}
+} */
 
 .glowing-circle.active {
   width: 50px;
@@ -448,6 +448,20 @@ img {
   font-size: 2rem;
   color: var(--primary-color);
   margin-bottom: 0.8rem;
+}
+
+.skill:not(.no-filter) img {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.8rem;
+  filter: brightness(0) saturate(100%) invert(54%) sepia(92%) saturate(2446%) hue-rotate(151deg) brightness(99%) contrast(101%);
+}
+
+/* Or target only the Bloc Pattern to remove filter */
+.skill.no-filter img {
+    width: 3rem;
+  height: 3rem;
+  filter: none;
 }
 
 .skill span {
