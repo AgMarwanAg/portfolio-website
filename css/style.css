@@ -3,9 +3,9 @@
   /* Colors */
   --primary-color: #00B4D8;
   --primary-dark: #0077B6;
-  --primary-light: #90E0EF;
-  --bg-color: #0a0a14;
-  --bg-secondary: #121220;
+  --primary-light: #48CAE4;
+  --bg-color: #0d0d1a;
+  --bg-secondary: #1a1a2e;
   --text-color: #f0f0f5;
   --text-secondary: #a0a0b0;
   
@@ -428,7 +428,7 @@ img {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  background: #1a1a2e;
+  background: #2a2a4e;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 1;
