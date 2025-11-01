@@ -1,3 +1,298 @@
+// Portfolio data
+let portfolioData = {};
+
+// Load portfolio data from JSON
+async function loadPortfolioData() {
+    try {
+        const response = await fetch('data/portfolio.json');
+        portfolioData = await response.json();
+        populatePortfolio();
+    } catch (error) {
+        console.error('Error loading portfolio data:', error);
+    }
+}
+
+// Populate portfolio with data from JSON
+function populatePortfolio() {
+    // Populate navigation
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu && portfolioData.navigation) {
+        navMenu.innerHTML = '';
+        portfolioData.navigation.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'nav-item';
+            const a = document.createElement('a');
+            a.href = item.href;
+            a.className = 'nav-link';
+            a.textContent = item.name;
+            li.appendChild(a);
+            navMenu.appendChild(li);
+        });
+        
+        // Add CV download button
+        const cvLi = document.createElement('li');
+        cvLi.className = 'nav-item';
+        const cvA = document.createElement('a');
+        cvA.href = portfolioData.personal.cvLink;
+        cvA.className = 'nav-link btn primary-btn heartbeat shimmer';
+        cvA.download = '';
+        cvA.textContent = 'Download CV';
+        cvLi.appendChild(cvA);
+        navMenu.appendChild(cvLi);
+    }
+    
+    // Populate hero section
+    if (portfolioData.personal) {
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            heroTitle.innerHTML = `Hi, I'm <span class="highlight">${portfolioData.personal.name}</span>`;
+        }
+        
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (heroSubtitle) {
+            heroSubtitle.textContent = portfolioData.personal.title;
+        }
+        
+        const heroDescription = document.getElementById('hero-description');
+        if (heroDescription) {
+            heroDescription.textContent = portfolioData.personal.description;
+        }
+        
+        const portraitImage = document.getElementById('portrait-image');
+        if (portraitImage) {
+            portraitImage.src = portfolioData.personal.portrait;
+            portraitImage.alt = `${portfolioData.personal.name} - ${portfolioData.personal.title}`;
+        }
+        
+        const mobileCvBtn = document.getElementById('mobile-cv-btn');
+        if (mobileCvBtn) {
+            mobileCvBtn.href = portfolioData.personal.cvLink;
+        }
+    }
+    
+    // Populate about section
+    if (portfolioData.about) {
+        const aboutDescription = document.getElementById('about-description');
+        if (aboutDescription) {
+            aboutDescription.textContent = portfolioData.about.description;
+        }
+        
+        // Populate skills
+        const skillsContainer = document.getElementById('skills-container');
+        if (skillsContainer && portfolioData.about.skills) {
+            skillsContainer.innerHTML = '';
+            portfolioData.about.skills.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = 'skill';
+                
+                if (skill.icon.startsWith('fa-')) {
+                    const icon = document.createElement('i');
+                    icon.className = skill.icon;
+                    skillDiv.appendChild(icon);
+                } else {
+                    const img = document.createElement('img');
+                    img.src = skill.icon;
+                    img.alt = skill.name;
+                    skillDiv.appendChild(img);
+                }
+                
+                const span = document.createElement('span');
+                span.textContent = skill.name;
+                skillDiv.appendChild(span);
+                
+                skillsContainer.appendChild(skillDiv);
+            });
+        }
+        
+        // Populate stats
+        const statsContainer = document.getElementById('stats-container');
+        if (statsContainer && portfolioData.about.stats) {
+            statsContainer.innerHTML = '';
+            portfolioData.about.stats.forEach(stat => {
+                const statCard = document.createElement('div');
+                statCard.className = 'stat-card glass-card shimmer';
+                
+                const h3 = document.createElement('h3');
+                h3.textContent = stat.value;
+                statCard.appendChild(h3);
+                
+                const p = document.createElement('p');
+                p.textContent = stat.label;
+                statCard.appendChild(p);
+                
+                statsContainer.appendChild(statCard);
+            });
+        }
+    }
+    
+    // Populate education section
+    const educationContent = document.getElementById('education-content');
+    if (educationContent && portfolioData.education) {
+        educationContent.innerHTML = '';
+        portfolioData.education.forEach(edu => {
+            const eduItem = document.createElement('div');
+            eduItem.className = 'education-item glass-card shimmer';
+            
+            const eduBadge = document.createElement('div');
+            eduBadge.className = 'education-badge';
+            const badgeIcon = document.createElement('i');
+            badgeIcon.className = `fas ${edu.icon}`;
+            eduBadge.appendChild(badgeIcon);
+            eduItem.appendChild(eduBadge);
+            
+            const eduHeader = document.createElement('div');
+            eduHeader.className = 'education-header';
+            
+            const eduTitle = document.createElement('h3');
+            eduTitle.textContent = edu.degree;
+            eduHeader.appendChild(eduTitle);
+            
+            const eduMeta = document.createElement('div');
+            eduMeta.className = 'education-meta';
+            
+            const institutionSpan = document.createElement('span');
+            institutionSpan.className = 'institution';
+            institutionSpan.innerHTML = `<i class="fas fa-building"></i> ${edu.institution}`;
+            eduMeta.appendChild(institutionSpan);
+            
+            const locationSpan = document.createElement('span');
+            locationSpan.className = 'location';
+            locationSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${edu.location}`;
+            eduMeta.appendChild(locationSpan);
+            
+            const durationSpan = document.createElement('span');
+            durationSpan.className = 'duration';
+            durationSpan.innerHTML = `<i class="far fa-calendar"></i> ${edu.duration}`;
+            eduMeta.appendChild(durationSpan);
+            
+            eduHeader.appendChild(eduMeta);
+            eduItem.appendChild(eduHeader);
+            
+            if (edu.achievements && edu.achievements.length > 0) {
+                const eduDetails = document.createElement('div');
+                eduDetails.className = 'education-details';
+                
+                const ul = document.createElement('ul');
+                edu.achievements.forEach(achievement => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-award"></i> ${achievement}`;
+                    ul.appendChild(li);
+                });
+                
+                eduDetails.appendChild(ul);
+                eduItem.appendChild(eduDetails);
+            }
+            
+            educationContent.appendChild(eduItem);
+        });
+    }
+    
+    // Populate projects section
+    const projectsGrid = document.getElementById('projects-grid');
+    if (projectsGrid && portfolioData.projects) {
+        projectsGrid.innerHTML = '';
+        portfolioData.projects.forEach((project, index) => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card glass-card shimmer';
+            projectCard.style.animationDelay = `${(index + 1) * 0.1}s`;
+            
+            const projectImage = document.createElement('div');
+            projectImage.className = 'project-image';
+            
+            const projectLogo = document.createElement('img');
+            projectLogo.src = project.logo;
+            projectLogo.alt = `${project.name} App Logo`;
+            projectLogo.className = 'project-logo';
+            projectImage.appendChild(projectLogo);
+            projectCard.appendChild(projectImage);
+            
+            const projectContent = document.createElement('div');
+            projectContent.className = 'project-content';
+            
+            const projectName = document.createElement('h3');
+            projectName.textContent = project.name;
+            projectContent.appendChild(projectName);
+            
+            const projectDescription = document.createElement('p');
+            projectDescription.textContent = project.description;
+            projectContent.appendChild(projectDescription);
+            
+            if (project.links && project.links.length > 0) {
+                const projectButtons = document.createElement('div');
+                projectButtons.className = 'project-buttons';
+                
+                project.links.forEach(link => {
+                    const linkA = document.createElement('a');
+                    linkA.href = link.url;
+                    linkA.className = 'btn secondary-btn';
+                    linkA.target = '_blank';
+                    linkA.innerHTML = `<i class="${link.icon}"></i> ${link.name}`;
+                    projectButtons.appendChild(linkA);
+                });
+                
+                projectContent.appendChild(projectButtons);
+            }
+            
+            projectCard.appendChild(projectContent);
+            projectsGrid.appendChild(projectCard);
+        });
+    }
+    
+    // Populate contact section
+    if (portfolioData.contact) {
+        const contactDescription = document.getElementById('contact-description');
+        if (contactDescription) {
+            contactDescription.textContent = portfolioData.contact.description;
+        }
+        
+        const contactEmail = document.getElementById('contact-email');
+        if (contactEmail) {
+            contactEmail.textContent = portfolioData.contact.email;
+        }
+        
+        const contactLocation = document.getElementById('contact-location');
+        if (contactLocation) {
+            contactLocation.textContent = portfolioData.contact.location;
+        }
+        
+        // Populate social links
+        const socialLinks = document.getElementById('social-links');
+        const footerSocial = document.getElementById('footer-social');
+        if (socialLinks && footerSocial && portfolioData.contact.socialLinks) {
+            socialLinks.innerHTML = '';
+            footerSocial.innerHTML = '';
+            
+            portfolioData.contact.socialLinks.forEach(link => {
+                // Add to contact section
+                const socialA = document.createElement('a');
+                socialA.href = link.url;
+                socialA.target = '_blank';
+                const socialIcon = document.createElement('i');
+                socialIcon.className = link.icon;
+                socialA.appendChild(socialIcon);
+                socialLinks.appendChild(socialA);
+                
+                // Add to footer
+                const footerA = document.createElement('a');
+                footerA.href = link.url;
+                footerA.target = '_blank';
+                const footerIcon = document.createElement('i');
+                footerIcon.className = link.icon;
+                footerA.appendChild(footerIcon);
+                footerSocial.appendChild(footerA);
+            });
+        }
+    }
+    
+    // Populate footer
+    if (portfolioData.footer) {
+        const copyright = document.getElementById('copyright');
+        if (copyright) {
+            copyright.innerHTML = `&copy; ${portfolioData.footer.copyright}`;
+        }
+    }
+}
+
 // Mobile Navigation Toggle with enhanced animation
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -182,28 +477,31 @@ function requestScrollUpdate() {
 
 // Set initial state for animated elements
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize scroll animations
-    animateOnScroll();
-    
-    // Add typing effect to hero subtitle
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    if (heroSubtitle) {
-        heroSubtitle.classList.add('typing-text');
-    }
-    
-    // Add shimmer effect to glass cards
-    const glassCards = document.querySelectorAll('.glass-card');
-    glassCards.forEach((card, index) => {
-        setTimeout(() => {
-            card.classList.add('shimmer');
-        }, index * 200);
+    // Load portfolio data
+    loadPortfolioData().then(() => {
+        // Initialize scroll animations
+        animateOnScroll();
+        
+        // Add typing effect to hero subtitle
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (heroSubtitle) {
+            heroSubtitle.classList.add('typing-text');
+        }
+        
+        // Add shimmer effect to glass cards
+        const glassCards = document.querySelectorAll('.glass-card');
+        glassCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('shimmer');
+            }, index * 200);
+        });
+        
+        // Initialize particle cursor effect
+        initParticleCursor();
+        
+        // Add loading animation
+        document.body.classList.add('loaded');
     });
-    
-    // Initialize particle cursor effect
-    initParticleCursor();
-    
-    // Add loading animation
-    document.body.classList.add('loaded');
 });
 
 // Listen for scroll events with throttling

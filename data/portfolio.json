@@ -1,0 +1,227 @@
+{
+  "personal": {
+    "name": "Marwan",
+    "fullName": "Marwan Alaghbary",
+    "title": "Flutter Developer",
+    "description": "I specialize in building beautiful, functional mobile applications using Flutter framework. With expertise in Dart, Clean Architecture, and State Management patterns.",
+    "email": "me@marwanag.dev",
+    "location": "Sana'a, Yemen",
+    "portrait": "assets/image.png",
+    "cvLink": "assets/Marwan Alaghbary mobile application developer.pdf"
+  },
+  "navigation": [
+    {
+      "name": "Home",
+      "href": "#home"
+    },
+    {
+      "name": "About",
+      "href": "#about"
+    },
+    {
+      "name": "Education",
+      "href": "#education"
+    },
+    {
+      "name": "Projects",
+      "href": "#projects"
+    },
+    {
+      "name": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "about": {
+    "description": "Mobile Application Developer with extensive experience in Flutter and Dart, specializing in Clean Architecture, SOLID principles, and Bloc state management. Skilled in developing and deploying cross-platform applications for Android and iOS. Demonstrated success in leading projects such as Hertz, SAM City Water, and Universal Hotels. Currently serving as a lecturer and developer at Developer Options and Alrazi University, with strong expertise in OOP, RESTful APIs, CI/CD, and Firebase.",
+    "skills": [
+      {
+        "name": "Flutter",
+        "icon": "assets/dart.svg"
+      },
+      {
+        "name": "Dart",
+        "icon": "assets/flutter.svg"
+      },
+      {
+        "name": "Bloc",
+        "icon": "assets/bloc.svg"
+      },
+      {
+        "name": "Firebase",
+        "icon": "assets/firebase.svg"
+      },
+      {
+        "name": "Apis",
+        "icon": "assets/api.svg"
+      },
+      {
+        "name": "Git",
+        "icon": "fa-brands fa-git-alt"
+      },
+      {
+        "name": "Android",
+        "icon": "fa-brands fa-android"
+      },
+      {
+        "name": "Ios",
+        "icon": "fa-brands fa-apple"
+      },
+      {
+        "name": "GitHub",
+        "icon": "fa-brands fa-github"
+      }
+    ],
+    "stats": [
+      {
+        "value": "4+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "8+",
+        "label": "Projects Completed"
+      },
+      {
+        "value": "10+",
+        "label": "Happy Clients"
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "Bachelor's degree in information technology",
+      "institution": "Alrazi University",
+      "location": "Sana'a",
+      "duration": "2019 – 2023",
+      "achievements": [
+        "I graduated from university with honors"
+      ],
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "degree": "Intermediate English diploma",
+      "institution": "FLI institute",
+      "location": "Sana'a",
+      "duration": "08-2018 – 04 2019",
+      "achievements": [],
+      "icon": "fa-certificate"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Talkah",
+      "description": "Food delivery, package delivery, individual delivery, goods transportation, international shipping, online store and reservation services Everything that comes to your mind will be delivered to you from anywhere and to any place.",
+      "logo": "assets/projects/talkah/logo.png",
+      "links": [
+        {
+          "name": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.talka.express.customer",
+          "icon": "fab fa-google-play"
+        },
+        {
+          "name": "App Store",
+          "url": "https://apps.apple.com/us/app/%D8%B7%D9%84%D9%82%D8%A9-%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%88%D8%B5%D9%8A%D9%84-%D9%88%D8%A7%D9%84%D9%86%D9%82%D9%84/id6471359414?platform=iphone",
+          "icon": "fab fa-apple"
+        }
+      ]
+    },
+    {
+      "name": "Medical House",
+      "description": "Medical House, we aspire to be the leading and most trusted global medical platform, the go-to source for all types of health knowledge and information. We strive to support your journey of health education and awareness, and to be a reliable and trustworthy resource for making informed health decisions.",
+      "logo": "assets/projects/medical/logo.png",
+      "links": [
+        {
+          "name": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.talka.express.customer",
+          "icon": "fab fa-google-play"
+        },
+        {
+          "name": "App Store",
+          "url": "https://apps.apple.com/us/app/%D8%B7%D9%84%D9%82%D8%A9-%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%88%D8%B5%D9%8A%D9%84-%D9%88%D8%A7%D9%84%D9%86%D9%82%D9%84/id6471359414?platform=iphone",
+          "icon": "fab fa-apple"
+        }
+      ]
+    },
+    {
+      "name": "SAM City Water",
+      "description": "Sam Food Company was established in 2019 as a subsidiary of the long-standing Sam Industrial Equipment Company. To specialize in the growing Yemeni food and beverage sector, it created the \"Sam City Water Factory\" as its first production facility.",
+      "logo": "assets/projects/sam/sam logo.png",
+      "links": [
+        {
+          "name": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.developersoptions.SAMfoods&hl=en",
+          "icon": "fab fa-google-play"
+        },
+        {
+          "name": "App Store",
+          "url": "https://apps.apple.com/us/app/%D9%85%D9%8A%D8%A7%D8%A9-%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%B3%D8%A7%D9%85/id6752538837?platform=iphone",
+          "icon": "fab fa-apple"
+        }
+      ]
+    },
+    {
+      "name": "Incart",
+      "description": "incart is a Saudi online store that combines high quality and competitive prices to meet all your daily needs from one place. We offer a wide assortment that includes fresh and canned food, vegetables and fruits, household supplies, and cleaning tools, in addition to pharmacy and personal care products, and we are constantly working to expand our range of products to meet our customers' ever-changing needs.",
+      "logo": "assets/projects/incart/logo.png",
+      "links": []
+    },
+    {
+      "name": "Hertz Car Rental",
+      "description": "The official app for the local agent of Hertz International for car rental services.",
+      "logo": "assets/projects/hertz/logo.png",
+      "links": [
+        {
+          "name": "Google Play",
+          "url": "https://drive.google.com/file/d/1kpnurq3aLG7tpLyJCskBWqmaAT6ZneRc/view?usp=drive_link",
+          "icon": "fab fa-google-play"
+        }
+      ]
+    },
+    {
+      "name": "Haddah Water",
+      "description": "Al-Nahdain Mineral Water Company Limited is considered one of the companies of the Al-Hathrah Industrial and Commercial Group. The group is considered one of the first groups to be established in the Republic of Yemen, immediately after the revolution, and the group's activity in the field of trade and industry began in Yemen.",
+      "logo": "assets/projects/haddah/logo.png",
+      "links": [
+        {
+          "name": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.alnahdain.haddahwaters&hl=en",
+          "icon": "fab fa-google-play"
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "description": "I'm currently available for freelance work and full-time positions. Feel free to reach out if you want to collaborate or just say hello!",
+    "email": "me@marwanag.dev",
+    "location": "Sana'a, Yemen",
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/AgMarwanAg",
+        "icon": "fab fa-github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/marwan-alaghbry-6058b8278",
+        "icon": "fab fa-linkedin-in"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/share/14KSWwsbG4s/",
+        "icon": "fab fa-facebook-f"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:me@marwanag.dev",
+        "icon": "fa-solid fa-envelope"
+      },
+      {
+        "name": "WhatsApp",
+        "url": "https://wa.me/967771056196",
+        "icon": "fab fa-whatsapp"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "2025 Marwan Alaghbary."
+  }
+}
